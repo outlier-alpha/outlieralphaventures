@@ -44,6 +44,14 @@
     --shadow-glow: 0 0 40px hsl(220 91% 35% / 0.15);
     --shadow-card: 0 4px 24px hsl(8 12% 4% / 0.4);
     
+    /* Neural mesh background */
+    --neural-mesh: linear-gradient(135deg, 
+      hsla(var(--primary), 0.03) 0%, 
+      transparent 50%, 
+      hsla(var(--secondary), 0.02) 100%);
+    --neural-line: hsla(var(--primary), 0.15);
+    --neural-node: hsla(var(--primary-glow), 0.4);
+    
     /* Smooth transitions */
     --transition-premium: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);

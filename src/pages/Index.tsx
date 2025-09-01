@@ -1,73 +1,63 @@
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import AboutUs from "@/components/AboutUs";
 const Index = () => {
   return <main className="pt-16">
       <Hero />
       <Services />
+      <AboutUs />
       
-      {/* Research Section Placeholder */}
+      {/* Research Section */}
       <section id="research" className="py-24 bg-card/30">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold font-serif mb-6">
             <span className="text-gradient-secondary">Research</span> & Insights
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Deep-dive analysis and thought leadership on emerging markets, 
-            technology trends, and investment opportunities.
+            Latest analysis and insights from InvesteData Diaries
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {[{
-            title: "FinTech Disruption Report 2024",
-            description: "Comprehensive analysis of emerging fintech trends and their impact on traditional banking.",
-            readTime: "12 min read"
+            title: "RBI Strikes Again",
+            description: "Analysis of RBI's latest guidelines affecting the fintech ecosystem and gold loan segment.",
+            link: "https://investedatadiaries.wordpress.com/2024/05/01/rbi-strikes-again/"
           }, {
-            title: "AI in Private Equity",
-            description: "How artificial intelligence is transforming due diligence and portfolio management.",
-            readTime: "8 min read"
+            title: "Venture Funding Cycles",
+            description: "Understanding investment cycles and founder strategies during funding droughts.",
+            link: "https://investedatadiaries.wordpress.com"
           }, {
-            title: "Market Intelligence Trends",
-            description: "The evolution of competitive intelligence in the age of big data and automation.",
-            readTime: "15 min read"
+            title: "World of Web3",
+            description: "Weekly insights on NFT marketplaces, big tech moves, and Web3 ecosystem developments.",
+            link: "https://investedatadiaries.wordpress.com/2022/10/02/world-of-web3-beta-ep13/"
           }].map((article, index) => <div key={index} className="bg-card/50 backdrop-blur-sm p-6 rounded-lg border border-border/20 hover:shadow-card transition-premium">
                 <h3 className="font-semibold mb-3 text-foreground">{article.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{article.description}</p>
                 <div className="flex justify-between items-center">
-                  <span className="text-xs text-secondary">{article.readTime}</span>
-                  <button className="text-sm text-primary hover:text-primary-glow transition-premium">
+                  <a 
+                    href={article.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-sm text-primary hover:text-primary-glow transition-premium"
+                  >
                     Read More →
-                  </button>
+                  </a>
                 </div>
               </div>)}
           </div>
         </div>
       </section>
 
-      {/* Resources Section Placeholder */}
+      {/* Resources Section */}
       <section id="resources" className="py-24 bg-background">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold font-serif mb-6">
             <span className="text-gradient-primary">Resources</span> & Tools
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Curated resources, tools, and frameworks to accelerate your business transformation.
+            Access comprehensive resources from our knowledge base
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[{
-            title: "Investment Frameworks",
-            count: "12 Templates"
-          }, {
-            title: "Market Analysis Tools",
-            count: "8 Tools"
-          }, {
-            title: "AI Implementation Guides",
-            count: "15 Guides"
-          }, {
-            title: "Case Studies",
-            count: "25 Studies"
-          }].map((resource, index) => <div key={index} className="bg-gradient-card p-6 rounded-lg border border-border/20 hover:shadow-premium transition-premium">
-                <div className="text-2xl font-bold text-secondary mb-2">{resource.count}</div>
-                <div className="text-foreground font-semibold">{resource.title}</div>
-              </div>)}
+          <div className="text-muted-foreground">
+            <p>Resources content will be populated from the GitHub repository and blog archives.</p>
           </div>
         </div>
       </section>

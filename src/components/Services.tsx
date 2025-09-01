@@ -7,22 +7,22 @@ const Services = () => {
     {
       icon: TrendingUp,
       title: "Market & Competitive Intelligence",
-      description: "Deep market analysis and competitive intelligence powered by AI and proprietary data sources. Get unprecedented insights into market dynamics, competitor movements, and emerging opportunities.",
+      description: "AI-powered market analysis and competitive intelligence for strategic decision making.",
       features: ["Real-time market monitoring", "Competitor analysis", "Trend forecasting", "Industry benchmarking"],
       gradient: "from-primary to-primary-glow"
     },
     {
       icon: Brain,
       title: "AI/ML Powered Transformation",
-      description: "Transform your business operations with cutting-edge AI and machine learning solutions. From process automation to predictive analytics, we architect intelligent systems that drive growth.",
+      description: "Transform operations with cutting-edge AI solutions and intelligent automation.",
       features: ["Process automation", "Predictive analytics", "Custom AI models", "Data transformation"],
       gradient: "from-secondary to-secondary-glow"
     },
     {
       icon: DollarSign,
-      title: "Investment Advisory",
-      description: "Strategic investment advisory backed by decades of experience and quantitative analysis. Navigate complex investment landscapes with confidence and precision.",
-      features: ["Portfolio optimization", "Risk assessment", "Due diligence", "Strategic planning"],
+      title: "Fundraise & M&A Advisory",
+      description: "Strategic fundraising and M&A advisory backed by quantitative analysis and market expertise.",
+      features: ["Capital raising", "M&A strategy", "Due diligence", "Deal structuring"],
       gradient: "from-primary-glow to-secondary"
     }
   ];

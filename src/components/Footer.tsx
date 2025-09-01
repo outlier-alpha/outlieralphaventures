@@ -17,10 +17,9 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-premium">Market Intelligence</a></li>
-              <li><a href="#" className="hover:text-foreground transition-premium">AI Transformation</a></li>
-              
-              <li><a href="#" className="hover:text-foreground transition-premium">Strategic Consulting</a></li>
+              <li><a href="#services" className="hover:text-foreground transition-premium">Market & Competitive Intelligence</a></li>
+              <li><a href="#services" className="hover:text-foreground transition-premium">AI/ML Powered Transformation</a></li>
+              <li><a href="#services" className="hover:text-foreground transition-premium">Fundraise & M&A Advisory</a></li>
             </ul>
           </div>
 
@@ -28,10 +27,9 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Resources</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#research" className="hover:text-foreground transition-premium">Research</a></li>
-              <li><a href="#resources" className="hover:text-foreground transition-premium">Insights</a></li>
-              
-              <li><a href="#" className="hover:text-foreground transition-premium">White Papers</a></li>
+              <li><a href="#research" className="hover:text-foreground transition-premium">Research & Insights</a></li>
+              <li><a href="#resources" className="hover:text-foreground transition-premium">Resources & Tools</a></li>
+              <li><a href="https://investedatadiaries.wordpress.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-premium">InvesteData Diaries</a></li>
             </ul>
           </div>
 

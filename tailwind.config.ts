@@ -95,13 +95,37 @@ export default {
 				'glow': {
 					'0%, 100%': { opacity: '1' },
 					'50%': { opacity: '0.5' }
+				},
+				'neural-flow': {
+					'0%': { 
+						transform: 'translateX(-100%) translateY(-50%)',
+						opacity: '0'
+					},
+					'10%': { opacity: '0.3' },
+					'90%': { opacity: '0.3' },
+					'100%': { 
+						transform: 'translateX(200vw) translateY(-50%)',
+						opacity: '0'
+					}
+				},
+				'neural-pulse': {
+					'0%, 100%': { 
+						opacity: '0.2',
+						transform: 'scale(1)'
+					},
+					'50%': { 
+						opacity: '0.6',
+						transform: 'scale(1.2)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'float': 'float 6s ease-in-out infinite',
-				'glow': 'glow 2s ease-in-out infinite alternate'
+				'glow': 'glow 2s ease-in-out infinite alternate',
+				'neural-flow': 'neural-flow 20s linear infinite',
+				'neural-pulse': 'neural-pulse 3s ease-in-out infinite'
 			}
 		}
 	},
