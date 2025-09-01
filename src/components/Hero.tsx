@@ -1,15 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, Brain, Target } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url(${heroBg})`
+    }} />
       <div className="absolute inset-0 bg-gradient-hero opacity-90" />
       
       {/* Content */}
@@ -23,10 +20,7 @@ const Hero = () => {
           </h1>
           
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Transforming businesses through AI-powered intelligence, strategic advisory, 
-            and world-class investment expertise. Where technology meets capital.
-          </p>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">Nurturing Tomorrow's Titans with AI-powered intelligence, strategic growth, and fundraise advisory.</p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -34,9 +28,7 @@ const Hero = () => {
               Explore Our Services
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button variant="glass" size="xl">
-              View Case Studies
-            </Button>
+            
           </div>
 
           {/* Trust Indicators */}
@@ -56,8 +48,6 @@ const Hero = () => {
       <div className="absolute top-1/4 left-10 w-2 h-2 bg-secondary rounded-full animate-glow" />
       <div className="absolute top-3/4 right-10 w-1 h-1 bg-primary-glow rounded-full animate-float" />
       <div className="absolute top-1/2 left-1/4 w-1.5 h-1.5 bg-secondary-glow rounded-full animate-glow" />
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;

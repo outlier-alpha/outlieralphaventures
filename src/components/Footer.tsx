@@ -1,18 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-
 const Footer = () => {
-  return (
-    <footer className="bg-card border-t border-border/20">
+  return <footer className="bg-card border-t border-border/20">
       <div className="container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div className="col-span-1">
             <h3 className="text-xl font-bold font-serif mb-4">Outlier Alpha</h3>
-            <p className="text-muted-foreground mb-6">
-              Next-generation venture studio combining AI-powered intelligence 
-              with strategic investment expertise.
-            </p>
+            <p className="text-muted-foreground mb-6">Next-generation venture studio combining strategic advisory with AI transformation expertise.</p>
             <Button variant="hero" size="sm">
               Get Started
             </Button>
@@ -24,7 +19,7 @@ const Footer = () => {
             <ul className="space-y-2 text-muted-foreground">
               <li><a href="#" className="hover:text-foreground transition-premium">Market Intelligence</a></li>
               <li><a href="#" className="hover:text-foreground transition-premium">AI Transformation</a></li>
-              <li><a href="#" className="hover:text-foreground transition-premium">Investment Advisory</a></li>
+              
               <li><a href="#" className="hover:text-foreground transition-premium">Strategic Consulting</a></li>
             </ul>
           </div>
@@ -35,7 +30,7 @@ const Footer = () => {
             <ul className="space-y-2 text-muted-foreground">
               <li><a href="#research" className="hover:text-foreground transition-premium">Research</a></li>
               <li><a href="#resources" className="hover:text-foreground transition-premium">Insights</a></li>
-              <li><a href="#" className="hover:text-foreground transition-premium">Case Studies</a></li>
+              
               <li><a href="#" className="hover:text-foreground transition-premium">White Papers</a></li>
             </ul>
           </div>
@@ -44,10 +39,11 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li>hello@outlieralpha.com</li>
-              <li>+1 (555) 123-4567</li>
+              <li>info.outlieralpha@gmail.com</li>
+              <li>+91 (XXX) XXX-XXXX</li>
               <li>New York, NY</li>
-              <li>London, UK</li>
+              <li>
+            </li>
             </ul>
           </div>
         </div>
@@ -63,8 +59,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
