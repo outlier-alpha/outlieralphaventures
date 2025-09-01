@@ -15,23 +15,6 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Floating Stats */}
-          <div className="flex justify-center mb-8">
-            <div className="flex space-x-8 text-sm text-secondary/80">
-              <div className="flex items-center space-x-2">
-                <TrendingUp className="w-4 h-4" />
-                <span>$2.5B+ AUM</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Brain className="w-4 h-4" />
-                <span>AI-Powered</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Target className="w-4 h-4" />
-                <span>Strategic Advisory</span>
-              </div>
-            </div>
-          </div>
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold font-serif mb-6 leading-tight">
