@@ -1,73 +1,108 @@
-# Welcome to your Lovable project
+# Outlier Alpha Ventures - Studio Web
 
-## Project info
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0.0-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-4.0.0-646CFF?logo=vite)](https://vitejs.dev/)
 
-**URL**: https://lovable.dev/projects/1b701bc8-00e9-48e5-905f-7c10abcc85ba
+Modern web application for Outlier Alpha Ventures, a venture studio focused on innovative startups and research.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **Modern Stack**: Built with React 18, TypeScript, and Vite
+- **Beautiful UI**: Styled with Tailwind CSS and shadcn/ui components
+- **Responsive Design**: Works on all device sizes
+- **Interactive Elements**: Smooth animations and transitions
+- **Multi-page**: Home, Research, and Resources sections
+- **Dark/Light Mode**: Built-in theme support
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1b701bc8-00e9-48e5-905f-7c10abcc85ba) and start prompting.
+- **Frontend**: React 18, TypeScript
+- **Styling**: Tailwind CSS, shadcn/ui
+- **Build Tool**: Vite
+- **State Management**: React Query
+- **Routing**: React Router
+- **UI Components**: Radix UI Primitives + shadcn/ui
+- **Icons**: Lucide Icons
+- **Form Handling**: React Hook Form
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js 16+ (LTS recommended)
+- npm or yarn or pnpm
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation
 
-Follow these steps:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/outlieralphaventures/studio-web.git
+   cd studio-web
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn
+   # or
+   pnpm install
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+4. Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### Building for Production
+
+```bash
+npm run build
+# or
+yarn build
+# or
+pnpm build
 ```
 
-**Edit a file directly in GitHub**
+## Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+src/
+├── assets/           # Static assets (images, fonts, etc.)
+├── components/       # Reusable UI components
+├── hooks/            # Custom React hooks
+├── lib/              # Utility functions and configurations
+├── pages/            # Page components
+├── App.tsx           # Main application component
+└── main.tsx          # Application entry point
+```
 
-**Use GitHub Codespaces**
+## Contributing
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+We welcome contributions! Please feel free to submit a Pull Request.
 
-## What technologies are used for this project?
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This project is built with:
+## License
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## How can I deploy this project?
+## Contact
 
-Simply open [Lovable](https://lovable.dev/projects/1b701bc8-00e9-48e5-905f-7c10abcc85ba) and click on Share -> Publish.
+For any inquiries, please reach out to [your-email@example.com](mailto:your-email@example.com)
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Made with ❤️ by [Outlier Alpha Ventures](https://outlieralphaventures.com)
