@@ -37,7 +37,7 @@ const Index = () => {
                     href={article.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-sm text-primary hover:text-primary-glow transition-premium font-semibold"
+                    className="text-sm text-white hover:text-white/80 transition-premium font-bold"
                   >
                     Read More →
                   </a>

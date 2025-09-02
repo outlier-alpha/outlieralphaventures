@@ -15,18 +15,6 @@ const Resources = () => {
       description: "Prompts for competitive intelligence gathering and market analysis",
       type: "Prompt Library",
       downloads: "890"
-    },
-    {
-      title: "Investment Thesis Generator",
-      description: "Structured prompts for developing and validating investment hypotheses",
-      type: "Strategy Tool",
-      downloads: "650"
-    },
-    {
-      title: "Risk Assessment Framework",
-      description: "AI-powered risk evaluation prompts for venture investments",
-      type: "Risk Management",
-      downloads: "430"
     }
   ];
 
@@ -80,28 +68,12 @@ const Resources = () => {
 
   const videos = [
     {
-      title: "AI's $200B Question",
-      creator: "Sequoia Capital",
-      summary: "Analysis of AI infrastructure investments and the path to sustainable returns in artificial intelligence.",
-      link: "https://www.youtube.com/watch?v=example1",
-      duration: "24 min",
-      category: "AI/Tech"
-    },
-    {
-      title: "The Future of Fintech",
-      creator: "A16Z",
-      summary: "Comprehensive overview of fintech evolution, regulatory challenges, and emerging opportunities in financial services.",
-      link: "https://www.youtube.com/watch?v=example2",
-      duration: "32 min",
-      category: "Fintech"
-    },
-    {
-      title: "Building Marketplace Networks",
-      creator: "NFX",
-      summary: "Strategic framework for building and scaling network effect businesses and marketplace platforms.",
-      link: "https://www.youtube.com/watch?v=example3",
-      duration: "28 min",
-      category: "Network Effects"
+      title: "AI in Finance: Transforming Investment Strategies",
+      creator: "Outlier Alpha Ventures",
+      summary: "Deep dive into how artificial intelligence is revolutionizing financial analysis, risk assessment, and investment decision-making processes.",
+      link: "https://youtu.be/27GthqI37xg?si=Tme7kKIvob84gRI0",
+      duration: "25 min",
+      category: "AI/Finance"
     }
   ];
 
@@ -149,7 +121,13 @@ const Resources = () => {
                     {prompt.description}
                   </p>
                   
-                  <Button variant="outline" size="sm" className="w-full">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="w-full opacity-50 cursor-not-allowed" 
+                    disabled
+                    onClick={() => alert("Coming Soon")}
+                  >
                     <Download className="h-4 w-4 mr-2" />
                     Download Package
                   </Button>
@@ -260,7 +238,7 @@ const Resources = () => {
             </h2>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-6">
+           <div className="grid lg:grid-cols-1 gap-6 max-w-md mx-auto">
             {videos.map((video, index) => (
               <Card key={index} className="bg-card/50 backdrop-blur-sm border-border/20 hover:shadow-card transition-premium">
                 <div className="p-6">
