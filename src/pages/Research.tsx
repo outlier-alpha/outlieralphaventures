@@ -58,7 +58,7 @@ const Research = () => {
             Research & <span className="text-gradient-primary">Insights</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Deep market analysis, industry insights, and strategic perspectives from InvesteData Diaries
+            Ideas, Frameworks & Strategies to keep you ahead
           </p>
           
           {/* Category Filters */}
