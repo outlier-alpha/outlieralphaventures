@@ -126,7 +126,7 @@ const Research = () => {
             Stay Updated with Our <span className="text-gradient-secondary">Research</span>
           </h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Get weekly insights and analysis delivered to your inbox. Deep market intelligence for informed investment decisions.
+            Get weekly insights and analysis on everything AI x Finance delivered to your inbox.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <input 
