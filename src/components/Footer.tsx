@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Linkedin } from "lucide-react";
 const Footer = () => {
   return <footer className="bg-card border-t border-border/20">
       <div className="container mx-auto px-6 py-16">
@@ -8,8 +9,10 @@ const Footer = () => {
           <div className="col-span-1">
             <h3 className="text-xl font-bold font-serif mb-4">Outlier Alpha</h3>
             <p className="text-muted-foreground mb-6">Next-generation venture studio combining strategic advisory with AI transformation expertise.</p>
-            <Button variant="hero" size="sm">
-              Get Started
+            <Button variant="hero" size="sm" asChild>
+              <a href="https://calendly.com/manoj-outlieralphaventures/30min" target="_blank" rel="noopener noreferrer">
+                Get Started
+              </a>
             </Button>
           </div>
 
@@ -29,7 +32,7 @@ const Footer = () => {
             <ul className="space-y-2 text-muted-foreground">
               <li><a href="#research" className="hover:text-foreground transition-premium">Research & Insights</a></li>
               <li><a href="#resources" className="hover:text-foreground transition-premium">Resources & Tools</a></li>
-              <li><a href="https://investedatadiaries.wordpress.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-premium">InvesteData Diaries</a></li>
+              <li><a href="https://investedatadiaries.wordpress.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-premium">Archive</a></li>
             </ul>
           </div>
 
@@ -39,9 +42,18 @@ const Footer = () => {
             <ul className="space-y-2 text-muted-foreground">
               <li>info.outlieralpha@gmail.com</li>
               <li>+91 (XXX) XXX-XXXX</li>
-              <li>New York, NY</li>
+              <li>Delhi, Singapore</li>
               <li>
-            </li>
+                <a 
+                  href="https://www.linkedin.com/company/outlier-alpha-ventures/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center hover:text-foreground transition-premium"
+                >
+                  <Linkedin className="w-4 h-4 mr-2" />
+                  LinkedIn
+                </a>
+              </li>
             </ul>
           </div>
         </div>

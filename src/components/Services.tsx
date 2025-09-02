@@ -94,8 +94,10 @@ const Services = () => {
 
         {/* Bottom CTA */}
         <div className="text-center">
-          <Button variant="premium" size="lg">
-            Schedule a Consultation
+          <Button variant="premium" size="lg" asChild>
+            <a href="https://calendly.com/manoj-outlieralphaventures/30min" target="_blank" rel="noopener noreferrer">
+              Schedule a Consultation
+            </a>
           </Button>
         </div>
       </div>

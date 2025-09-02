@@ -22,8 +22,10 @@ const Header = () => {
             </Link>
           </nav>
         </div>
-        <Button variant="hero" size="default">
-          Get Started
+        <Button variant="hero" size="default" asChild>
+          <a href="https://calendly.com/manoj-outlieralphaventures/30min" target="_blank" rel="noopener noreferrer">
+            Get Started
+          </a>
         </Button>
       </div>
     </header>

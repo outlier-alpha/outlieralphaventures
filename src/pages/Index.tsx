@@ -37,7 +37,7 @@ const Index = () => {
                     href={article.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-sm text-primary hover:text-primary-glow transition-premium"
+                    className="text-sm text-primary hover:text-primary-glow transition-premium font-semibold"
                   >
                     Read More →
                   </a>
@@ -70,9 +70,9 @@ const Index = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">Partner with us to unlock the full potential of AI-powered intelligence and strategic growth advisory.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gradient-secondary text-secondary-foreground px-8 py-4 rounded-lg font-semibold hover:shadow-glow transition-premium">
+            <a href="https://calendly.com/manoj-outlieralphaventures/30min" target="_blank" rel="noopener noreferrer" className="bg-gradient-secondary text-secondary-foreground px-8 py-4 rounded-lg font-semibold hover:shadow-glow transition-premium inline-block">
               Schedule Consultation
-            </button>
+            </a>
             
           </div>
         </div>

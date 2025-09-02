@@ -33,7 +33,7 @@ const Hero = () => {
 
           {/* Trust Indicators */}
           <div className="text-center">
-            <p className="text-sm text-muted-foreground mb-4">Trusted by leading enterprises worldwide</p>
+            <p className="text-sm text-muted-foreground mb-4">Trusted by Leaders</p>
             <div className="flex justify-center space-x-8 opacity-60">
               <div className="text-xs tracking-wider font-medium">FORTUNE 500</div>
               <div className="text-xs tracking-wider font-medium">UNICORNS</div>
