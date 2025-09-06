@@ -14,7 +14,119 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      content: {
+        Row: {
+          author_id: string | null
+          category: string | null
+          content_html: string | null
+          content_type: Database["public"]["Enums"]["content_type"]
+          created_at: string
+          description: string | null
+          external_url: string | null
+          id: string
+          metadata: Json | null
+          published_at: string | null
+          status: Database["public"]["Enums"]["content_status"]
+          tags: string[] | null
+          thumbnail_url: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author_id?: string | null
+          category?: string | null
+          content_html?: string | null
+          content_type: Database["public"]["Enums"]["content_type"]
+          created_at?: string
+          description?: string | null
+          external_url?: string | null
+          id?: string
+          metadata?: Json | null
+          published_at?: string | null
+          status?: Database["public"]["Enums"]["content_status"]
+          tags?: string[] | null
+          thumbnail_url?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author_id?: string | null
+          category?: string | null
+          content_html?: string | null
+          content_type?: Database["public"]["Enums"]["content_type"]
+          created_at?: string
+          description?: string | null
+          external_url?: string | null
+          id?: string
+          metadata?: Json | null
+          published_at?: string | null
+          status?: Database["public"]["Enums"]["content_status"]
+          tags?: string[] | null
+          thumbnail_url?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "content_author_id_fkey"
+            columns: ["author_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      newsletter_subscribers: {
+        Row: {
+          email: string
+          id: string
+          is_active: boolean
+          subscribed_at: string
+        }
+        Insert: {
+          email: string
+          id?: string
+          is_active?: boolean
+          subscribed_at?: string
+        }
+        Update: {
+          email?: string
+          id?: string
+          is_active?: boolean
+          subscribed_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          role: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          role?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          role?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +135,8 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      content_status: "draft" | "published" | "archived"
+      content_type: "blog_post" | "ai_prompt" | "book" | "podcast" | "video"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +263,9 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      content_status: ["draft", "published", "archived"],
+      content_type: ["blog_post", "ai_prompt", "book", "podcast", "video"],
+    },
   },
 } as const
