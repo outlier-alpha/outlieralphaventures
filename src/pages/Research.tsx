@@ -1,7 +1,16 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useNewsletter } from "@/hooks/useNewsletter";
+import { useState } from "react";
 
 const Research = () => {
+  const [email, setEmail] = useState('');
+  const { subscribe, isLoading, message } = useNewsletter();
+
+  const handleSubscribe = () => {
+    subscribe(email);
+    setEmail('');
+  };
   const articles = [
     {
       title: "RBI strikes again!",
@@ -132,12 +141,23 @@ const Research = () => {
             <input 
               type="email" 
               placeholder="Enter your email" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="flex-1 px-4 py-3 rounded-lg bg-background border border-border/20 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
-            <Button variant="premium">
-              Subscribe
+            <Button 
+              variant="premium" 
+              onClick={handleSubscribe}
+              disabled={isLoading}
+            >
+              {isLoading ? 'Subscribing...' : 'Subscribe'}
             </Button>
           </div>
+          {message && (
+            <p className="mt-4 text-sm text-center text-foreground">
+              {message}
+            </p>
+          )}
         </div>
       </div>
     </main>

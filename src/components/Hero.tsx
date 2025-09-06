@@ -53,6 +53,32 @@ const Hero = () => {
       <div className="absolute top-1/4 left-10 w-2 h-2 bg-secondary rounded-full animate-glow" />
       <div className="absolute top-3/4 right-10 w-1 h-1 bg-primary-glow rounded-full animate-float" />
       <div className="absolute top-1/2 left-1/4 w-1.5 h-1.5 bg-secondary-glow rounded-full animate-glow" />
+      
+      {/* Subtle connecting lines */}
+      <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none">
+        <defs>
+          <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.8" />
+            <stop offset="50%" stopColor="hsl(var(--secondary))" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="hsl(var(--primary-glow))" stopOpacity="0.2" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 100 300 Q 300 100 600 250 T 1000 400"
+          stroke="url(#connectionGradient)"
+          strokeWidth="1"
+          fill="none"
+          className="animate-neural-flow"
+        />
+        <path
+          d="M 200 500 Q 500 200 800 400 T 1200 300"
+          stroke="url(#connectionGradient)"
+          strokeWidth="0.5"
+          fill="none"
+          className="animate-neural-flow"
+          style={{ animationDelay: '2s' }}
+        />
+      </svg>
     </section>;
 };
 export default Hero;
