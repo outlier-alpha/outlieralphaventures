@@ -82,7 +82,7 @@ const Research = () => {
             <Card key={index} className="bg-card/50 backdrop-blur-sm border-border/20 hover:shadow-card transition-premium group">
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
+                  <span className="text-xs font-medium text-white bg-white/10 px-3 py-1 rounded-full">
                     {article.category}
                   </span>
                   <span className="text-xs text-muted-foreground">

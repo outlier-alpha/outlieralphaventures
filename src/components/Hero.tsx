@@ -24,7 +24,12 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button variant="hero" size="xl" className="shadow-glow">
+            <Button 
+              variant="hero" 
+              size="xl" 
+              className="shadow-glow"
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Explore Our Services
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>

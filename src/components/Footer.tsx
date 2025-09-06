@@ -9,11 +9,6 @@ const Footer = () => {
           <div className="col-span-1">
             <h3 className="text-xl font-bold font-serif mb-4">Outlier Alpha</h3>
             <p className="text-muted-foreground mb-6">Next-generation venture studio combining strategic advisory with AI transformation expertise.</p>
-            <Button variant="hero" size="sm" asChild>
-              <a href="https://calendly.com/manoj-outlieralphaventures/30min" target="_blank" rel="noopener noreferrer">
-                Get Started
-              </a>
-            </Button>
           </div>
 
           {/* Services */}

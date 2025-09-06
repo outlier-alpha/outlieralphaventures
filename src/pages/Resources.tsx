@@ -129,7 +129,7 @@ const Resources = () => {
                     onClick={() => alert("Coming Soon")}
                   >
                     <Download className="h-4 w-4 mr-2" />
-                    Download Package
+                    Contact Us
                   </Button>
                 </div>
               </Card>
@@ -242,26 +242,20 @@ const Resources = () => {
             {videos.map((video, index) => (
               <Card key={index} className="bg-card/50 backdrop-blur-sm border-border/20 hover:shadow-card transition-premium">
                 <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-medium text-accent bg-accent/10 px-3 py-1 rounded-full">
-                      {video.category}
-                    </span>
-                    <span className="text-xs text-muted-foreground">
-                      {video.duration}
-                    </span>
+                  {/* YouTube Thumbnail */}
+                  <div className="mb-4">
+                    <a href={video.link} target="_blank" rel="noopener noreferrer">
+                      <img 
+                        src="https://img.youtube.com/vi/27GthqI37xg/maxresdefault.jpg" 
+                        alt={video.title}
+                        className="w-full rounded-lg hover:opacity-90 transition-premium"
+                      />
+                    </a>
                   </div>
                   
                   <h3 className="font-bold text-lg mb-2 text-foreground">
                     {video.title}
                   </h3>
-                  
-                  <p className="text-sm text-muted-foreground mb-3">
-                    by {video.creator}
-                  </p>
-                  
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    {video.summary}
-                  </p>
                   
                   <a 
                     href={video.link} 

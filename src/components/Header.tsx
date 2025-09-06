@@ -24,7 +24,7 @@ const Header = () => {
         </div>
         <Button variant="hero" size="default" asChild>
           <a href="https://calendly.com/manoj-outlieralphaventures/30min" target="_blank" rel="noopener noreferrer">
-            Get Started
+            Contact Us
           </a>
         </Button>
       </div>
