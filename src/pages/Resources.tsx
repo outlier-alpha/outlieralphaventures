@@ -1,8 +1,18 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useContent } from "@/hooks/useContent";
 import { Download, BookOpen, Headphones, Play, ExternalLink } from "lucide-react";
+import { useState } from "react";
 
 const Resources = () => {
+  const [selectedType, setSelectedType] = useState('All');
+  const { content, loading, error } = useContent(
+    selectedType === 'All' ? undefined : 
+    selectedType === 'AI Prompts' ? 'ai_prompt' :
+    selectedType.toLowerCase()
+  );
+
+  // Fallback static data for when database is empty
   const aiPrompts = [
     {
       title: "Due Diligence Automation Workflows",
