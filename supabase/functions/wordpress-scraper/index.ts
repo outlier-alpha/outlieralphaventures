@@ -36,15 +36,88 @@ Deno.serve(async (req) => {
 
     console.log('Starting WordPress content scraping...');
 
-    // Fetch posts from WordPress API
-    const postsResponse = await fetch('https://investedatadiaries.wordpress.com/wp-json/wp/v2/posts?per_page=100&status=publish');
-    const posts: WordPressPost[] = await postsResponse.json();
+    // Fetch posts from WordPress API - try multiple possible URLs
+    let postsResponse;
+    let posts: WordPressPost[] = [];
+    
+    // Try different WordPress REST API endpoints
+    const possibleUrls = [
+      'https://public-api.wordpress.com/wp/v2/sites/investedatadiaries.wordpress.com/posts?per_page=100&status=publish',
+      'https://investedatadiaries.wordpress.com/wp-json/wp/v2/posts?per_page=100&status=publish',
+      'https://public-api.wordpress.com/rest/v1.1/sites/investedatadiaries.wordpress.com/posts?number=100'
+    ];
+    
+    for (const url of possibleUrls) {
+      try {
+        console.log(`Trying URL: ${url}`);
+        postsResponse = await fetch(url);
+        if (postsResponse.ok) {
+          const responseText = await postsResponse.text();
+          console.log(`Response from ${url}:`, responseText.substring(0, 200));
+          
+          // Handle different response formats
+          const responseData = JSON.parse(responseText);
+          if (responseData.posts) {
+            // WordPress.com API format
+            posts = responseData.posts.map((post: any) => ({
+              title: { rendered: post.title },
+              content: { rendered: post.content },
+              excerpt: { rendered: post.excerpt },
+              date: post.date,
+              link: post.URL || post.guid,
+              categories: post.categories ? Object.keys(post.categories).map(Number) : [],
+              tags: post.tags ? Object.keys(post.tags).map(Number) : [],
+              featured_media: post.featured_image || 0
+            }));
+          } else if (Array.isArray(responseData)) {
+            // Standard WordPress REST API format
+            posts = responseData;
+          }
+          
+          if (posts.length > 0) {
+            console.log(`Successfully fetched ${posts.length} posts from ${url}`);
+            break;
+          }
+        }
+      } catch (error) {
+        console.log(`Failed to fetch from ${url}:`, error);
+        continue;
+      }
+    }
 
-    // Fetch categories
-    const categoriesResponse = await fetch('https://investedatadiaries.wordpress.com/wp-json/wp/v2/categories');
-    const categories: WordPressCategory[] = await categoriesResponse.json();
+    if (posts.length === 0) {
+      throw new Error('Unable to fetch posts from any WordPress API endpoint');
+    }
 
-    const categoryMap = new Map(categories.map(cat => [cat.id, cat.name]));
+    // For WordPress.com API, categories might be in a different format
+    let categories: WordPressCategory[] = [];
+    let categoryMap = new Map<number, string>();
+    
+    // Try to fetch categories, but don't fail if it doesn't work
+    try {
+      const categoriesResponse = await fetch('https://public-api.wordpress.com/rest/v1.1/sites/investedatadiaries.wordpress.com/categories');
+      if (categoriesResponse.ok) {
+        const categoriesData = await categoriesResponse.json();
+        if (categoriesData.categories) {
+          categories = Object.values(categoriesData.categories).map((cat: any) => ({
+            id: cat.ID,
+            name: cat.name,
+            slug: cat.slug
+          }));
+          categoryMap = new Map(categories.map(cat => [cat.id, cat.name]));
+        }
+      }
+    } catch (error) {
+      console.log('Could not fetch categories, using default mapping');
+      // Create a simple mapping for common categories
+      categoryMap = new Map([
+        [1, 'General'],
+        [2, 'Finance'],
+        [3, 'AI'],
+        [4, 'Technology'],
+        [5, 'Investment']
+      ]);
+    }
 
     console.log(`Found ${posts.length} posts to process`);
 

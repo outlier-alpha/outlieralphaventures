@@ -161,7 +161,7 @@ const Resources = () => {
               <Card key={index} className="bg-card/50 backdrop-blur-sm border-border/20 hover:shadow-card transition-premium">
                 <div className="p-6">
                   <div className="mb-4">
-                    <span className="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
+                    <span className="text-xs font-medium text-white bg-white/10 px-3 py-1 rounded-full">
                       {book.category}
                     </span>
                   </div>
@@ -182,7 +182,7 @@ const Resources = () => {
                     href={book.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-primary hover:text-primary-glow transition-premium font-medium"
+                    className="inline-flex items-center text-sm text-white hover:text-white/80 transition-premium font-medium"
                   >
                     <ExternalLink className="h-4 w-4 mr-1" />
                     View Book
@@ -207,7 +207,7 @@ const Resources = () => {
               <Card key={index} className="bg-card/50 backdrop-blur-sm border-border/20 hover:shadow-card transition-premium">
                 <div className="p-6">
                   <div className="mb-4">
-                    <span className="text-xs font-medium text-secondary bg-secondary/10 px-3 py-1 rounded-full">
+                    <span className="text-xs font-medium text-white bg-white/10 px-3 py-1 rounded-full">
                       {podcast.category}
                     </span>
                   </div>
@@ -228,7 +228,7 @@ const Resources = () => {
                     href={podcast.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-primary hover:text-primary-glow transition-premium font-medium"
+                    className="inline-flex items-center text-sm text-white hover:text-white/80 transition-premium font-medium"
                   >
                     <ExternalLink className="h-4 w-4 mr-1" />
                     Listen Now
@@ -271,7 +271,7 @@ const Resources = () => {
                     href={video.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-primary hover:text-primary-glow transition-premium font-medium"
+                    className="inline-flex items-center text-sm text-white hover:text-white/80 transition-premium font-medium"
                   >
                     <Play className="h-4 w-4 mr-1" />
                     Watch Video

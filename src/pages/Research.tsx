@@ -9,6 +9,7 @@ const Research = () => {
   const [email, setEmail] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [isLoadingData, setIsLoadingData] = useState(false);
+  const [displayCount, setDisplayCount] = useState(6);
   const { subscribe, isLoading, message } = useNewsletter();
   const { content: articles, loading: articlesLoading, error, refetch } = useContent('blog_post', selectedCategory);
 
@@ -33,6 +34,15 @@ const Research = () => {
 
   // Get unique categories from articles
   const categories = ['All', ...Array.from(new Set(articles.map(article => article.category).filter(Boolean)))];
+
+  // Handle load more functionality
+  const handleLoadMore = () => {
+    setDisplayCount(prev => prev + 6);
+  };
+
+  // Filter and slice articles for display
+  const displayedArticles = articles.slice(0, displayCount);
+  const hasMore = displayCount < articles.length;
 
   
 
@@ -106,7 +116,7 @@ const Research = () => {
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((article) => (
+            {displayedArticles.map((article) => (
               <Card key={article.id} className="bg-card/50 backdrop-blur-sm border-border/20 hover:shadow-card transition-premium group">
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
@@ -132,7 +142,7 @@ const Research = () => {
                         href={article.external_url} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-sm text-primary hover:text-primary-glow transition-premium font-medium"
+                        className="text-sm text-white hover:text-white/80 transition-premium font-medium"
                       >
                         Read Full Analysis →
                       </a>
@@ -149,11 +159,17 @@ const Research = () => {
         )}
 
         {/* Load More Section */}
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg">
-            Load More Articles
-          </Button>
-        </div>
+        {hasMore && (
+          <div className="text-center mt-12">
+            <Button 
+              variant="outline" 
+              size="lg"
+              onClick={handleLoadMore}
+            >
+              See More Posts
+            </Button>
+          </div>
+        )}
 
         {/* Newsletter Subscription */}
         <div className="mt-16 bg-gradient-card rounded-2xl p-8 text-center">
