@@ -158,18 +158,18 @@ const Research = () => {
           </div>
         )}
 
-        {/* Load More Section */}
-        {hasMore && (
-          <div className="text-center mt-12">
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={handleLoadMore}
-            >
-              See More Posts
-            </Button>
-          </div>
-        )}
+          {/* Load More Section */}
+          {hasMore && (
+            <div className="text-center mt-12">
+              <Button 
+                variant="outline" 
+                size="lg"
+                onClick={handleLoadMore}
+              >
+                See More Posts
+              </Button>
+            </div>
+          )}
 
         {/* Newsletter Subscription */}
         <div className="mt-16 bg-gradient-card rounded-2xl p-8 text-center">

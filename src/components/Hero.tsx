@@ -1,84 +1,55 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp, Brain, Target } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import EnhancedNeuralMesh from "@/components/EnhancedNeuralMesh";
+
 const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url(${heroBg})`
-    }} />
-      <div className="absolute inset-0 bg-gradient-hero opacity-90" />
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Enhanced Neural Mesh Background */}
+      <div className="absolute inset-0 z-0">
+        <EnhancedNeuralMesh />
+      </div>
+      
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90 z-10" />
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      <div className="relative z-20 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
-
-          {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold font-serif mb-6 leading-tight">
-            <span className="text-gradient-primary">Next-Gen</span><br />
-            <span className="text-foreground">Venture Studio</span>
+          <h1 className="text-5xl md:text-7xl font-bold font-serif mb-8 leading-tight">
+            Where <span className="text-gradient-primary">AI</span> meets{" "}
+            <span className="text-gradient-secondary">Finance</span>
           </h1>
-          
-          {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">Nurturing Tomorrow's Titans with AI-powered intelligence, strategic growth, and fundraise advisory.</p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-3xl mx-auto">
+            Empowering venture builders with intelligent automation, strategic insights, 
+            and cutting-edge tools to revolutionize investment decisions.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button 
-              variant="hero" 
-              size="xl" 
-              className="shadow-glow"
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              size="lg" 
+              className="px-8 py-4 text-lg bg-gradient-primary hover:shadow-glow transition-premium"
+              onClick={() => {
+                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Explore Our Services
-              <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="text-center">
-            <p className="text-sm text-muted-foreground mb-4">Trusted by Leaders</p>
-            <div className="flex justify-center space-x-8 opacity-60">
-              <div className="text-xs tracking-wider font-medium">FORTUNE 500</div>
-              <div className="text-xs tracking-wider font-medium">UNICORNS</div>
-              <div className="text-xs tracking-wider font-medium">PE FIRMS</div>
-              <div className="text-xs tracking-wider font-medium">STARTUPS</div>
-            </div>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="px-8 py-4 text-lg border-2"
+              asChild
+            >
+              <a href="https://calendly.com/iabe-ventures/30min" target="_blank" rel="noopener noreferrer">
+                Contact Us
+              </a>
+            </Button>
           </div>
         </div>
       </div>
-
-      {/* Animated Elements */}
-      <div className="absolute top-1/4 left-10 w-2 h-2 bg-secondary rounded-full animate-glow" />
-      <div className="absolute top-3/4 right-10 w-1 h-1 bg-primary-glow rounded-full animate-float" />
-      <div className="absolute top-1/2 left-1/4 w-1.5 h-1.5 bg-secondary-glow rounded-full animate-glow" />
       
-      {/* Subtle connecting lines */}
-      <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none">
-        <defs>
-          <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.8" />
-            <stop offset="50%" stopColor="hsl(var(--secondary))" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="hsl(var(--primary-glow))" stopOpacity="0.2" />
-          </linearGradient>
-        </defs>
-        <path
-          d="M 100 300 Q 300 100 600 250 T 1000 400"
-          stroke="url(#connectionGradient)"
-          strokeWidth="1"
-          fill="none"
-          className="animate-neural-flow"
-        />
-        <path
-          d="M 200 500 Q 500 200 800 400 T 1200 300"
-          stroke="url(#connectionGradient)"
-          strokeWidth="0.5"
-          fill="none"
-          className="animate-neural-flow"
-          style={{ animationDelay: '2s' }}
-        />
-      </svg>
-    </section>;
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-15" />
+    </section>
+  );
 };
 export default Hero;
